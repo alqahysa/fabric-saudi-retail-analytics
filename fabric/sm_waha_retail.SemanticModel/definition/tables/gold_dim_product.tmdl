@@ -1,0 +1,59 @@
+table gold_dim_product
+	lineageTag: 60d4e72f-19ca-446e-af8a-d22da2374ad1
+	sourceLineageTag: [dbo].[gold_dim_product]
+
+	column product_key
+		dataType: string
+		lineageTag: 9e1f300b-a5d0-4578-846f-d34fe9298fe6
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: d490d7a9-0b67-4101-b126-9383d3461cb4
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column sama_sector
+		dataType: string
+		lineageTag: 1b0427df-488e-4d0f-8f12-51e7115b006c
+		sourceLineageTag: sama_sector
+		summarizeBy: none
+		sourceColumn: sama_sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand
+		dataType: string
+		lineageTag: 252443e1-76a4-4412-bc9c-ce393f321ff2
+		sourceLineageTag: brand
+		summarizeBy: none
+		sourceColumn: brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column list_price_sar
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 0627ecd1-ad2c-4b0b-8c6d-4f7ddea949fd
+		sourceLineageTag: list_price_sar
+		summarizeBy: sum
+		sourceColumn: list_price_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition gold_dim_product = entity
+		mode: directLake
+		source
+			entityName: gold_dim_product
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_retail'
+

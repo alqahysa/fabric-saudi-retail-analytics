@@ -1,0 +1,147 @@
+table gold_fact_orders
+	lineageTag: 0a548207-c38a-4d67-8704-29f7747d3d94
+	sourceLineageTag: [dbo].[gold_fact_orders]
+
+	column order_id
+		dataType: string
+		lineageTag: b9a192ef-d40a-42db-989e-9bae4402ec3e
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 20ab46a2-3bcd-4e8f-8559-1b6b31fbf3af
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: string
+		lineageTag: 8b5b0c16-43cd-48ae-8bc8-4e417926138e
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column branch_key
+		dataType: string
+		lineageTag: 29692d10-80ac-4ff4-87f1-6b001323866c
+		sourceLineageTag: branch_key
+		summarizeBy: none
+		sourceColumn: branch_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel
+		dataType: string
+		lineageTag: 1299f10c-8dc1-44c8-9d34-a2f143b3d63a
+		sourceLineageTag: channel
+		summarizeBy: none
+		sourceColumn: channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 2eae0faa-f425-4e05-94f9-fd8deb91dbaf
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: f7179d74-8154-427f-aff2-9f48ae4300f9
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 0af2b3e3-23ce-4988-a632-6fa6beba74e6
+		sourceLineageTag: order_hour
+		summarizeBy: sum
+		sourceColumn: order_hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		lineageTag: 0214b635-0679-465e-a8fd-838c1d7fb5fd
+		sourceLineageTag: payment_method
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column installments
+		dataType: int64
+		formatString: 0
+		lineageTag: 7034e374-d56c-44e2-a7dc-103dd63dd012
+		sourceLineageTag: installments
+		summarizeBy: sum
+		sourceColumn: installments
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_bnpl
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1dcebc82-f203-40a6-8a19-4a99563c5d75
+		sourceLineageTag: is_bnpl
+		summarizeBy: none
+		sourceColumn: is_bnpl
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_paid_sar
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: daffdccf-6c83-4151-a899-1817b3184a8e
+		sourceLineageTag: amount_paid_sar
+		summarizeBy: sum
+		sourceColumn: amount_paid_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column items
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c5df298-b8b5-4d27-a032-79270d98360e
+		sourceLineageTag: items
+		summarizeBy: sum
+		sourceColumn: items
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_gross_sar
+		dataType: double
+		lineageTag: 0994fc92-3354-411e-9c52-fca769d57396
+		sourceLineageTag: order_gross_sar
+		summarizeBy: sum
+		sourceColumn: order_gross_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_fact_orders = entity
+		mode: directLake
+		source
+			entityName: gold_fact_orders
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_retail'
+

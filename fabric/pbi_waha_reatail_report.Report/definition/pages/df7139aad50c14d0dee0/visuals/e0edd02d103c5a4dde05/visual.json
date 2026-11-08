@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "e0edd02d103c5a4dde05",
+  "position": {
+    "x": 301.30585516178706,
+    "y": 134.5030816640986,
+    "z": 0,
+    "height": 207.08782742681049,
+    "width": 266.25577812018491
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "wr_Measures"
+                    }
+                  },
+                  "Property": "VAT Collected"
+                }
+              },
+              "queryRef": "wr_Measures.VAT Collected",
+              "nativeQueryRef": "VAT Collected"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "wr_Measures"
+                  }
+                },
+                "Property": "VAT Collected"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b60f52883261b00c00c1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "wr_Measures"
+              }
+            },
+            "Property": "VAT Collected"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

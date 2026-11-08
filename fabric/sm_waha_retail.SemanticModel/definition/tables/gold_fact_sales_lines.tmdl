@@ -1,0 +1,164 @@
+table gold_fact_sales_lines
+	lineageTag: a4e8af5f-76db-47c5-a953-9e995bcf4694
+	sourceLineageTag: [dbo].[gold_fact_sales_lines]
+
+	column order_id
+		dataType: string
+		lineageTag: 3cefdb2b-cfb9-47cf-ba3a-f35e822f8bb1
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_no
+		dataType: int64
+		formatString: 0
+		lineageTag: be9db2e2-1109-4202-87af-0a7e91e49df2
+		sourceLineageTag: line_no
+		summarizeBy: sum
+		sourceColumn: line_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: cfba2f3f-763e-4799-be86-a6622b9226de
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: string
+		lineageTag: 00fd6f47-ef94-4699-9d8e-d4f38727fbfe
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: string
+		lineageTag: 64e9844d-f36c-4f4a-b1e0-a90f897345ac
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column branch_key
+		dataType: string
+		lineageTag: 2b3a8976-f7a1-4b98-9574-7815f0208ad0
+		sourceLineageTag: branch_key
+		summarizeBy: none
+		sourceColumn: branch_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel
+		dataType: string
+		lineageTag: b5fd7fea-9040-483f-b2ab-f8111408595d
+		sourceLineageTag: channel
+		summarizeBy: none
+		sourceColumn: channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 999356fc-4d57-412a-8b36-bb1c754893b3
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: e235c636-c73e-43df-9800-be5ddfdb4519
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 49c4e5f1-770f-449d-8a0c-8f68140938da
+		sourceLineageTag: quantity
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price_sar
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 9bd32673-8837-46e2-839a-ad52b7e45e20
+		sourceLineageTag: unit_price_sar
+		summarizeBy: sum
+		sourceColumn: unit_price_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column discount_sar
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 043b1ad5-4619-410f-8963-2a44288543ab
+		sourceLineageTag: discount_sar
+		summarizeBy: sum
+		sourceColumn: discount_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column net_sales_sar
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 04ab8168-5dae-4869-b2ca-c35e74b609f1
+		sourceLineageTag: net_sales_sar
+		summarizeBy: sum
+		sourceColumn: net_sales_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column vat_sar
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8ed274a1-cb5a-4efc-9d53-dd241e0be7ce
+		sourceLineageTag: vat_sar
+		summarizeBy: sum
+		sourceColumn: vat_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column gross_sales_sar
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 56fc335e-238a-494f-90f1-55706f22b603
+		sourceLineageTag: gross_sales_sar
+		summarizeBy: sum
+		sourceColumn: gross_sales_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition gold_fact_sales_lines = entity
+		mode: directLake
+		source
+			entityName: gold_fact_sales_lines
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_retail'
+
