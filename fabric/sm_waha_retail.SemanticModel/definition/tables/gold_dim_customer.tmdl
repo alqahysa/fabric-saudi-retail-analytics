@@ -1,0 +1,59 @@
+table gold_dim_customer
+	lineageTag: 58e0bb49-e235-4c35-b2ca-f843b31454ab
+	sourceLineageTag: [dbo].[gold_dim_customer]
+
+	column customer_key
+		dataType: string
+		lineageTag: ddcb0871-9282-4d43-9b4c-8d9a0f89fbb8
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_city
+		dataType: string
+		lineageTag: cb40d402-608a-4e45-a387-9eef6fda2c91
+		sourceLineageTag: home_city
+		summarizeBy: none
+		sourceColumn: home_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_order_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 91b260b2-c8da-4222-b6eb-5a87cf1f8f16
+		sourceLineageTag: first_order_date
+		summarizeBy: none
+		sourceColumn: first_order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifetime_orders
+		dataType: int64
+		formatString: 0
+		lineageTag: 639cdde6-b777-4639-b241-b4b2ddc5892b
+		sourceLineageTag: lifetime_orders
+		summarizeBy: sum
+		sourceColumn: lifetime_orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_repeat_customer
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a1461ae5-b540-43f6-a0e0-5912aab7ad2a
+		sourceLineageTag: is_repeat_customer
+		summarizeBy: none
+		sourceColumn: is_repeat_customer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_customer = entity
+		mode: directLake
+		source
+			entityName: gold_dim_customer
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_retail'
+

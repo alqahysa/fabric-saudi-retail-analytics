@@ -1,0 +1,425 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "c57bee588748e9195a46",
+  "displayName": "Page 1",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "autoPageGenerationConfig": {
+    "selectedFields": [
+      {
+        "Aggregation": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Function": 2
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Avg Daily Sales"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Avg Order Value"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "BNPL Share"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Cancellation Rate"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Market Sales"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Net Sales"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Net Sales PY"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Net Sales YoY %"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Online Share"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Orders"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "Ramadan Uplift %"
+        }
+      },
+      {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "wr_Measures"
+            }
+          },
+          "Property": "VAT Collected"
+        }
+      }
+    ],
+    "visualContainerConfigurations": [
+      {
+        "name": "eefa1fb04c416127325c",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "gold_fact_sales_lines"
+                }
+              },
+              "Property": "city"
+            }
+          },
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "VAT Collected"
+            }
+          }
+        ]
+      },
+      {
+        "name": "4b2e16039bb226140a00",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "gold_fact_sales_lines"
+                }
+              },
+              "Property": "city"
+            }
+          },
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "Orders"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f44b97d5880a34e422d7",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "gold_fact_sales_lines"
+                }
+              },
+              "Property": "city"
+            }
+          },
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "Online Share"
+            }
+          }
+        ]
+      },
+      {
+        "name": "1eb1c884cc40e0972ebe",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "gold_fact_sales_lines"
+                }
+              },
+              "Property": "city"
+            }
+          },
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "Net Sales"
+            }
+          }
+        ]
+      },
+      {
+        "name": "19b33dc74d22ea830075",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "gold_fact_sales_lines"
+                }
+              },
+              "Property": "city"
+            }
+          },
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "Avg Order Value"
+            }
+          }
+        ]
+      },
+      {
+        "name": "d12b5fc9266202690846",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "gold_fact_orders"
+                }
+              },
+              "Property": "city"
+            }
+          },
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "BNPL Share"
+            }
+          }
+        ]
+      },
+      {
+        "name": "342529add062ec1001a6",
+        "fields": []
+      },
+      {
+        "name": "c588e1cc017ae64a17bb",
+        "fields": []
+      },
+      {
+        "name": "f56a1d32b7008639517b",
+        "fields": []
+      },
+      {
+        "name": "3ca54c4d39d9ab1e3000",
+        "fields": []
+      },
+      {
+        "name": "01309eef30828265645b",
+        "fields": []
+      },
+      {
+        "name": "49207966e05c978010b9",
+        "fields": []
+      },
+      {
+        "name": "3bb957f32013ed7e8c67",
+        "fields": []
+      },
+      {
+        "name": "739591c48b82970eee96",
+        "fields": []
+      },
+      {
+        "name": "01ed7b890870a06b687e",
+        "fields": [
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "VAT Collected"
+            }
+          }
+        ]
+      },
+      {
+        "name": "59c5278c89d16a82b9cb",
+        "fields": [
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "Orders"
+            }
+          }
+        ]
+      },
+      {
+        "name": "4b507001246ced2ed691",
+        "fields": [
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "Online Share"
+            }
+          }
+        ]
+      },
+      {
+        "name": "b32ef0380b78dcc08ae9",
+        "fields": [
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "Net Sales"
+            }
+          }
+        ]
+      },
+      {
+        "name": "e417d06a58dbc0c7b164",
+        "fields": [
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "Avg Order Value"
+            }
+          }
+        ]
+      },
+      {
+        "name": "e1f4a2c9b557d870965d",
+        "fields": [
+          {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "wr_Measures"
+                }
+              },
+              "Property": "BNPL Share"
+            }
+          }
+        ]
+      },
+      {
+        "name": "d3dcb02a7e190ed601b9",
+        "fields": []
+      }
+    ],
+    "layout": {
+      "related": {
+        "version": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+table gold_dim_date
+	lineageTag: d856babd-e24b-46ef-af8a-5039addbd65b
+	sourceLineageTag: [dbo].[gold_dim_date]
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b6b58e9-0875-4cc6-8dd4-f4dbe1adbc94
+		sourceLineageTag: date_key
+		summarizeBy: sum
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f7a5567f-e65f-4806-8ed0-593b039f79c1
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: cc63a984-8b65-40ba-9851-2a5da81097e5
+		sourceLineageTag: year
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 8362ebfb-7163-4091-bf83-5e5210cab8b5
+		sourceLineageTag: quarter
+		summarizeBy: sum
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		lineageTag: b171b287-06fc-479c-bd2c-06c788284027
+		sourceLineageTag: month
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		dataType: string
+		lineageTag: a80d89ea-c612-45b8-a818-2c17acc74ffa
+		sourceLineageTag: month_name
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_month
+		dataType: string
+		lineageTag: 6d7f6306-e15f-4849-b39f-42039419a6e7
+		sourceLineageTag: year_month
+		summarizeBy: none
+		sourceColumn: year_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_name
+		dataType: string
+		lineageTag: 2b033921-6b21-4161-bdac-373d8bd363a0
+		sourceLineageTag: day_name
+		summarizeBy: none
+		sourceColumn: day_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 77129f0e-d3c8-4768-84bf-5a38935e43c5
+		sourceLineageTag: is_weekend
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_salary_period
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 258d61f0-4ae7-4938-9027-499c500d6f62
+		sourceLineageTag: is_salary_period
+		summarizeBy: none
+		sourceColumn: is_salary_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_name
+		dataType: string
+		lineageTag: a2e5fca3-b55a-40a9-b15a-ddf3091170d2
+		sourceLineageTag: event_name
+		summarizeBy: none
+		sourceColumn: event_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_date = entity
+		mode: directLake
+		source
+			entityName: gold_dim_date
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_retail'
+

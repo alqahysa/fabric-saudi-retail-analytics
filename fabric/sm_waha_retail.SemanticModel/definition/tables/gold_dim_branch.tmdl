@@ -1,0 +1,48 @@
+table gold_dim_branch
+	lineageTag: 7f8f8cd4-74bb-4924-87a5-65b57e6c61ca
+	sourceLineageTag: [dbo].[gold_dim_branch]
+
+	column branch_key
+		dataType: string
+		lineageTag: 582b505b-0a4c-4d57-94c1-b8838caf21c0
+		sourceLineageTag: branch_key
+		summarizeBy: none
+		sourceColumn: branch_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 1ae74b4d-78d4-4ba1-bbf2-2c6e0197aafc
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: af024ede-ef67-436e-b625-733621a9dc95
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_online
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 82a92e99-6b15-4479-8699-e2fa38192bd2
+		sourceLineageTag: is_online
+		summarizeBy: none
+		sourceColumn: is_online
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_branch = entity
+		mode: directLake
+		source
+			entityName: gold_dim_branch
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_retail'
+

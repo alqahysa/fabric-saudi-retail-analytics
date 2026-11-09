@@ -1,0 +1,60 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "load_month": "2025-02"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "be9fff40-a429-4213-b155-a5d861816e4e",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "25c84410-db48-4fd6-9a8f-fffb0613c76c"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Load last month",
+        "dependsOn": []
+      },
+      {
+        "type": "WebActivity",
+        "typeProperties": {
+          "method": "GET",
+          "relativeUrl": {
+            "value": "@concat('/bot9228607762:AAGk_YSWwAUzd1IifK1dZMPLPHa3yYfOqbU/sendMessage?chat_id=489618638&text=', uriComponent(concat('Retail pipeline failed', ' | Pipeline: ', pipeline().Pipeline, ' | Run ID: ', pipeline().RunId, ' | Error: ', activity('Load last month').error.message)))",
+            "type": "Expression"
+          },
+          "headers": {}
+        },
+        "externalReferences": {
+          "connection": "4ecd8220-0b0c-4a0b-a874-7bb51dec74ac"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Send Telegram alert",
+        "dependsOn": [
+          {
+            "activity": "Load last month",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

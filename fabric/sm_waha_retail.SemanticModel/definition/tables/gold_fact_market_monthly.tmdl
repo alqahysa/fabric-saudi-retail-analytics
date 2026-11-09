@@ -1,0 +1,51 @@
+table gold_fact_market_monthly
+	lineageTag: 115a9794-1000-4321-9579-cc37d7fcd1ef
+	sourceLineageTag: [dbo].[gold_fact_market_monthly]
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c1be834-4560-4c53-a020-d14d8142fedc
+		sourceLineageTag: date_key
+		summarizeBy: sum
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 78ff7c28-d89f-4b51-9bb8-c5f091a6873c
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cbe1a65b-6b0d-4393-838c-7913a99b921d
+		sourceLineageTag: month
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_sales_sar
+		dataType: double
+		lineageTag: b290693d-f75e-4853-b6d3-e2f03236d35a
+		sourceLineageTag: market_sales_sar
+		summarizeBy: sum
+		sourceColumn: market_sales_sar
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_fact_market_monthly = entity
+		mode: directLake
+		source
+			entityName: gold_fact_market_monthly
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_retail'
+

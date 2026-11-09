@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "sm_waha_retail"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a44d9336-6b24-488f-9061-8fea3769520c"
+  }
+}

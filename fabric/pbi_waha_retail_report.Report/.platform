@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "pbi_waha_retail_report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a833d366-7a81-4fe6-9bc7-b1f8f74586f4"
+  }
+}

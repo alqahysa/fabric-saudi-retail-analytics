@@ -1,0 +1,129 @@
+table wr_Measures
+	lineageTag: c1f21fa3-9b9a-488c-b914-3c688543ad52
+
+	measure 'Avg Daily Sales' = AVERAGEX ( VALUES ( gold_dim_date[date] ), [Net Sales] )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: cae0958a-053f-4d8f-bc13-dc349a0b325a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Avg Order Value' = DIVIDE ( [Net Sales], [Orders] )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d21d438c-551a-4fbe-8fd5-866ff7c127dd
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'BNPL Share' =
+			
+			DIVIDE (
+			    CALCULATE ( COUNTROWS ( gold_fact_orders ),
+			                gold_fact_orders[is_bnpl] = TRUE (), gold_fact_orders[status] = "delivered" ),
+			    CALCULATE ( COUNTROWS ( gold_fact_orders ), gold_fact_orders[status] = "delivered" )
+			)
+		lineageTag: 80977f4b-948c-4612-96c3-d2fa387b835c
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cancellation Rate' =
+			
+			DIVIDE ( CALCULATE ( COUNTROWS ( gold_fact_orders ), gold_fact_orders[status] = "cancelled" ),
+			         COUNTROWS ( gold_fact_orders ) )
+		lineageTag: a065ff9e-4c9d-42c3-8d2d-42c63594f2a1
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Market Sales' = SUM ( gold_fact_market_monthly[market_sales_sar] )
+		lineageTag: f695edca-07ba-488d-a80e-86a1482cdf53
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales' =
+			
+			CALCULATE ( SUM ( gold_fact_sales_lines[net_sales_sar] ),
+			            gold_fact_sales_lines[status] = "delivered" )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 29d0780e-41c4-4130-89f9-4c81c79c1d8a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Sales PY' = CALCULATE ( [Net Sales], SAMEPERIODLASTYEAR ( gold_dim_date[date] ) )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 97aaaaa9-22c5-45d3-b0c1-2376080bd162
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Sales YoY %' = DIVIDE ( [Net Sales] - [Net Sales PY], [Net Sales PY] )
+		lineageTag: d8d999d3-e2cf-4e3b-9f10-8fc4abb065a1
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Online Share' =
+			
+			DIVIDE ( CALCULATE ( [Net Sales], gold_fact_sales_lines[channel] = "Online" ), [Net Sales] )
+		lineageTag: 2ff2375b-c5c1-41ec-9dd4-ab21e1c2dcb8
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Orders =
+			
+			CALCULATE ( DISTINCTCOUNT ( gold_fact_sales_lines[order_id] ),
+			            gold_fact_sales_lines[status] = "delivered" )
+		formatString: 0
+		lineageTag: 5cb67181-9670-48a7-bcaa-a039c5e9f72e
+
+		changedProperty = Name
+
+	measure 'Ramadan Uplift %' =
+			
+			DIVIDE ( CALCULATE ( [Avg Daily Sales], gold_dim_date[event_name] = "Ramadan" ),
+			         CALCULATE ( [Avg Daily Sales], gold_dim_date[event_name] = "Regular day" ) ) - 1
+		lineageTag: 1d02cddc-5b29-492a-949d-fb3fca72deed
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'VAT Collected' =
+			
+			CALCULATE ( SUM ( gold_fact_sales_lines[vat_sar] ),
+			            gold_fact_sales_lines[status] = "delivered" )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: f7bc450b-f4f0-44c4-82a3-0fc1dca8b62a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Column
+		formatString: 0
+		lineageTag: 3371cde3-df7d-42b2-98dc-070bdd419636
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition wr_Measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 8e4c0f2898404d68a5006350b91c925b
+

@@ -1,0 +1,29 @@
+table gold_dim_category
+	lineageTag: ad49ee07-c013-4c8f-8230-a3eb6e19d25b
+	sourceLineageTag: [dbo].[gold_dim_category]
+
+	column category
+		dataType: string
+		lineageTag: 7c86c7ef-4e8f-4ebf-b488-9716a07d3302
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column sama_sector
+		dataType: string
+		lineageTag: ba94b669-c340-4d16-9db3-29f77dd3acdf
+		sourceLineageTag: sama_sector
+		summarizeBy: none
+		sourceColumn: sama_sector
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_category = entity
+		mode: directLake
+		source
+			entityName: gold_dim_category
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_retail'
+
