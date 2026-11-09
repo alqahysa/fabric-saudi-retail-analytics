@@ -8,12 +8,12 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse": "6297af8f-afdc-4f8c-9316-4c29cd7dd9c3",
+# META       "default_lakehouse": "fa6566e2-60d8-431a-86aa-c274ea8f752b",
 # META       "default_lakehouse_name": "lh_retail",
-# META       "default_lakehouse_workspace_id": "56093037-c36a-4035-b4e5-b42870864e55",
+# META       "default_lakehouse_workspace_id": "2d67245a-291e-4232-acfa-c6032bc23a2d",
 # META       "known_lakehouses": [
 # META         {
-# META           "id": "6297af8f-afdc-4f8c-9316-4c29cd7dd9c3"
+# META           "id": "fa6566e2-60d8-431a-86aa-c274ea8f752b"
 # META         }
 # META       ]
 # META     }
@@ -47,6 +47,11 @@ cal = spark.sql(f"SELECT explode(sequence(DATE'{date(lo.year, 1, 1)}', DATE'{dat
                 f"INTERVAL 1 DAY)) AS date")
 event_day = (cal.join(events, (cal.date >= events.start_date) & (cal.date <= events.end_date))
                 .groupBy("date").agg(F.first("event_name").alias("event_name")))
+
+# last payday: the 27th of this month, or of the previous month before the 27th
+last_payday = (F.when(F.dayofmonth("date") >= 27, F.date_add(F.trunc("date", "month"), 26))
+                .otherwise(F.date_add(F.trunc(F.add_months("date", -1), "month"), 26)))
+
 dim_date = (cal.join(event_day, "date", "left")
     .select(date_key("date").alias("date_key"), "date",
             F.year("date").alias("year"), F.quarter("date").alias("quarter"),
@@ -55,6 +60,7 @@ dim_date = (cal.join(event_day, "date", "left")
             F.date_format("date", "EEEE").alias("day_name"),
             F.dayofweek("date").isin(6, 7).alias("is_weekend"),          # Friday, Saturday
             ((F.dayofmonth("date") >= 27) | (F.dayofmonth("date") <= 2)).alias("is_salary_period"),
+            F.datediff("date", last_payday).alias("days_since_salary"),
             F.coalesce("event_name", F.lit("Regular day")).alias("event_name")))
 save(dim_date, "gold_dim_date")
 
