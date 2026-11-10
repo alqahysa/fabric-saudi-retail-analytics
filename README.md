@@ -102,7 +102,7 @@ Gold is rebuilt in full each run (about 170,000 orders, under a minute). At larg
 Each child pipeline is invoked with **Wait on completion** on, so a failure stops the run and triggers the alert.
 
 ![Pipeline run](docs/screenshots/monitor_run.png)
-![Telegram alert](docs/screenshots/telegram_alert.jpg)
+
 
 ## Dev → Prod and Git workflow
 
