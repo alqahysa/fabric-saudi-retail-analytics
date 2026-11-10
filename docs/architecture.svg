@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" font-family="Inter, DejaVu Sans, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect width="1600" height="980" fill="#ffffff"/>
+<text x="40" y="48" font-size="26" font-weight="700" fill="#111827" text-anchor="start">Waha Retail — Sales Analytics on Microsoft Fabric</text>
+<text x="40" y="74" font-size="14" font-weight="400" fill="#6b7280" text-anchor="start">Medallion lakehouse · incremental loads · automated orchestration · Dev → Prod with Git</text>
+<rect x="290" y="105" width="1030" height="172" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="310" y="131" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="start">ORCHESTRATION · Data Factory pipelines</text>
+<rect x="320" y="155" width="210" height="64" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="425.0" y="182" font-size="15" font-weight="700" fill="#1e3a8a" text-anchor="middle">pl_monthly_sales</text>
+<text x="425.0" y="203" font-size="12" font-weight="400" fill="#4b5563" text-anchor="middle">scheduled monthly</text>
+<rect x="640" y="155" width="230" height="64" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="755.0" y="182" font-size="15" font-weight="700" fill="#1e3a8a" text-anchor="middle">pl_load_month</text>
+<text x="755.0" y="203" font-size="12" font-weight="400" fill="#4b5563" text-anchor="middle">param: load_month</text>
+<rect x="980" y="155" width="200" height="64" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="1080.0" y="182" font-size="15" font-weight="700" fill="#1e3a8a" text-anchor="middle">pl_backfill</text>
+<text x="1080.0" y="203" font-size="12" font-weight="400" fill="#4b5563" text-anchor="middle">ForEach month (sequential)</text>
+<line x1="530" y1="187" x2="636" y2="187" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<line x1="980" y1="187" x2="874" y2="187" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="583" y="179" font-size="11.5" font-weight="500" fill="#2563eb" text-anchor="middle">invoke</text>
+<text x="927" y="179" font-size="11.5" font-weight="500" fill="#2563eb" text-anchor="middle">invoke</text>
+<text x="755" y="241" font-size="12" font-weight="500" fill="#1d4ed8" text-anchor="middle">runs nb_01 → nb_02 → nb_03 (wait on completion)</text>
+<rect x="1370" y="143" width="190" height="88" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="1465" y="173" font-size="15" font-weight="700" fill="#991b1b" text-anchor="middle">Telegram alert</text>
+<text x="1465" y="195" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">bot message via</text>
+<text x="1465" y="214" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">Web activity</text>
+<path d="M425,219 L425,261 L1300,261 L1300,187 L1366,187" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#ar)"/>
+<text x="1335" y="179" font-size="11.5" font-weight="600" fill="#dc2626" text-anchor="middle">on fail</text>
+<rect x="290" y="300" width="1030" height="300" rx="16" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="310" y="326" font-size="13" font-weight="700" fill="#374151" text-anchor="start">LAKEHOUSE  lh_retail  (Delta tables)</text>
+<line x1="680" y1="277" x2="680" y2="346" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#ab)"/>
+<line x1="935" y1="277" x2="935" y2="346" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#ab)"/>
+<line x1="1190" y1="277" x2="1190" y2="346" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#ab)"/>
+<rect x="310" y="344" width="220" height="236" rx="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="420.0" y="374" font-size="17" font-weight="700" fill="#111827" text-anchor="middle">Landing</text>
+<text x="420.0" y="396" font-size="12.5" font-weight="500" fill="#4b5563" text-anchor="middle">Files area</text>
+<line x1="326" y1="410" x2="514" y2="410" stroke="#9ca3af" stroke-opacity=".5"/>
+<text x="420.0" y="434" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">sales/YYYY-MM/</text>
+<text x="420.0" y="453" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">  orders · order_items · payments</text>
+<text x="420.0" y="472" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">reference/</text>
+<text x="420.0" y="491" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">  customers · products</text>
+<text x="420.0" y="510" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">  branches · events</text>
+<text x="420.0" y="529" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">market/pos_by_sector.csv</text>
+<rect x="570" y="344" width="220" height="236" rx="12" fill="#fdf2e9" stroke="#c2410c" stroke-width="1.5"/>
+<text x="680.0" y="374" font-size="17" font-weight="700" fill="#9a3412" text-anchor="middle">Bronze</text>
+<text x="680.0" y="396" font-size="12.5" font-weight="500" fill="#4b5563" text-anchor="middle">nb_01_bronze_ingest</text>
+<line x1="586" y1="410" x2="774" y2="410" stroke="#c2410c" stroke-opacity=".5"/>
+<text x="680.0" y="434" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">raw data as Delta tables</text>
+<text x="680.0" y="453" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">+ _source_file</text>
+<text x="680.0" y="472" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">+ _ingested_at · _load_month</text>
+<text x="680.0" y="491" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">replaceWhere per month</text>
+<text x="680.0" y="510" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">(re-runs never duplicate)</text>
+<text x="680.0" y="529" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">BOM stripped at read</text>
+<rect x="830" y="344" width="220" height="236" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+<text x="940.0" y="374" font-size="17" font-weight="700" fill="#334155" text-anchor="middle">Silver</text>
+<text x="940.0" y="396" font-size="12.5" font-weight="500" fill="#4b5563" text-anchor="middle">nb_02_silver_transform</text>
+<line x1="846" y1="410" x2="1034" y2="410" stroke="#64748b" stroke-opacity=".5"/>
+<text x="940.0" y="434" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">clean · standardize · dedupe</text>
+<text x="940.0" y="453" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">city map · timestamp parsing</text>
+<text x="940.0" y="472" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">watermark (etl_watermark)</text>
+<text x="940.0" y="491" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">Delta MERGE upsert</text>
+<text x="940.0" y="510" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">scoped delete sync</text>
+<text x="940.0" y="529" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">reconciliation check ✓</text>
+<rect x="1090" y="344" width="210" height="236" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
+<text x="1195.0" y="374" font-size="17" font-weight="700" fill="#854d0e" text-anchor="middle">Gold</text>
+<text x="1195.0" y="396" font-size="12.5" font-weight="500" fill="#4b5563" text-anchor="middle">nb_03_gold_model</text>
+<line x1="1106" y1="410" x2="1284" y2="410" stroke="#ca8a04" stroke-opacity=".5"/>
+<text x="1195.0" y="434" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">star schema</text>
+<text x="1195.0" y="453" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">fact_sales_lines · fact_orders</text>
+<text x="1195.0" y="472" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">fact_market_monthly</text>
+<text x="1195.0" y="491" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">dim_date (Saudi calendar)</text>
+<text x="1195.0" y="510" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">product · branch · customer</text>
+<text x="1195.0" y="529" font-size="12.5" font-weight="400" fill="#374151" text-anchor="middle">benchmark index (=100)</text>
+<line x1="530" y1="462.0" x2="566" y2="462.0" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="790" y1="462.0" x2="826" y2="462.0" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="1050" y1="462.0" x2="1086" y2="462.0" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)"/>
+<text x="150" y="326" font-size="13" font-weight="700" fill="#374151" text-anchor="middle">SOURCES</text>
+<rect x="40" y="344" width="220" height="108" rx="12" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+<text x="150" y="372" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Retail sales</text>
+<text x="150" y="391" font-size="12" font-weight="500" fill="#b45309" text-anchor="middle">generated · fictional</text>
+<text x="150" y="414" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">generate_saudi_retail.py</text>
+<text x="150" y="433" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">36 months · ~166k orders</text>
+<rect x="40" y="472" width="220" height="108" rx="12" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+<text x="150" y="500" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">SAMA POS data</text>
+<text x="150" y="519" font-size="12" font-weight="500" fill="#15803d" text-anchor="middle">real · 2016 – 2026</text>
+<text x="150" y="542" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">convert_sama_bulletin.py</text>
+<text x="150" y="561" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">bulletin 30e + report CSV</text>
+<line x1="260" y1="398" x2="306" y2="434" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="260" y1="526" x2="306" y2="494" stroke="#4b5563" stroke-width="2" marker-end="url(#ah)"/>
+<text x="283" y="464" font-size="11.5" font-weight="500" fill="#6b7280" text-anchor="middle">upload</text>
+<text x="1465" y="326" font-size="13" font-weight="700" fill="#374151" text-anchor="middle">SERVING</text>
+<rect x="1370" y="344" width="190" height="108" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="1465" y="374" font-size="15" font-weight="700" fill="#5b21b6" text-anchor="middle">sm_waha_retail</text>
+<text x="1465" y="398" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">semantic model</text>
+<text x="1465" y="417" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">Direct Lake</text>
+<text x="1465" y="436" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">many-to-one, single dir.</text>
+<rect x="1370" y="472" width="190" height="108" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="1465" y="502" font-size="15" font-weight="700" fill="#5b21b6" text-anchor="middle">Power BI report</text>
+<text x="1465" y="526" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">city · channel · payment</text>
+<text x="1465" y="545" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">Ramadan / White Friday</text>
+<text x="1465" y="564" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">growth vs market index</text>
+<line x1="1300" y1="398" x2="1366" y2="398" stroke="#7c3aed" stroke-width="2" marker-end="url(#ap)"/>
+<line x1="1465" y1="452" x2="1465" y2="468" stroke="#7c3aed" stroke-width="2" marker-end="url(#ap)"/>
+<rect x="40" y="650" width="1520" height="290" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="60" y="678" font-size="13" font-weight="700" fill="#15803d" text-anchor="start">LIFECYCLE · Git integration + deployment pipeline</text>
+<rect x="70" y="710" width="230" height="110" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="185.0" y="738" font-size="15" font-weight="700" fill="#14532d" text-anchor="middle">Branch workspace</text>
+<text x="185.0" y="762" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">feature branch</text>
+<text x="185.0" y="781" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">its own lakehouse</text>
+<text x="185.0" y="800" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">make &amp; test changes</text>
+<rect x="380" y="710" width="230" height="110" rx="10" fill="#ffffff" stroke="#111827" stroke-width="1.5"/>
+<text x="495.0" y="738" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">GitHub repo</text>
+<text x="495.0" y="762" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">main branch</text>
+<text x="495.0" y="781" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">folder fabric/</text>
+<text x="495.0" y="800" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">pull request review</text>
+<rect x="690" y="710" width="230" height="110" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="805.0" y="738" font-size="15" font-weight="700" fill="#14532d" text-anchor="middle">Dev workspace</text>
+<text x="805.0" y="762" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">synced to main</text>
+<text x="805.0" y="781" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">lh_retail (Dev)</text>
+<text x="805.0" y="800" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">pipelines + report</text>
+<rect x="1000" y="710" width="230" height="110" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="1115.0" y="738" font-size="15" font-weight="700" fill="#14532d" text-anchor="middle">Deployment pipeline</text>
+<text x="1115.0" y="762" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">Dev → Prod</text>
+<text x="1115.0" y="781" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">deployment rules</text>
+<text x="1115.0" y="800" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">re-point lakehouse</text>
+<rect x="1310" y="710" width="220" height="110" rx="10" fill="#ecfdf5" stroke="#15803d" stroke-width="1.5"/>
+<text x="1420.0" y="738" font-size="15" font-weight="700" fill="#14532d" text-anchor="middle">Prod workspace</text>
+<text x="1420.0" y="762" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">lh_retail (Prod)</text>
+<text x="1420.0" y="781" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">Direct Lake rebind</text>
+<text x="1420.0" y="800" font-size="12" font-weight="400" fill="#374151" text-anchor="middle">+ SQL endpoint refresh</text>
+<line x1="300" y1="765" x2="376" y2="765" stroke="#16a34a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="338.0" y="756" font-size="11.5" font-weight="600" fill="#15803d" text-anchor="middle">commit</text>
+<line x1="610" y1="765" x2="686" y2="765" stroke="#16a34a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="648.0" y="756" font-size="11.5" font-weight="600" fill="#15803d" text-anchor="middle">sync</text>
+<line x1="920" y1="765" x2="996" y2="765" stroke="#16a34a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="958.0" y="756" font-size="11.5" font-weight="600" fill="#15803d" text-anchor="middle">deploy</text>
+<line x1="1230" y1="765" x2="1306" y2="765" stroke="#16a34a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="1268.0" y="756" font-size="11.5" font-weight="600" fill="#15803d" text-anchor="middle">promote</text>
+<text x="70" y="862" font-size="12.5" font-weight="400" fill="#374151" text-anchor="start">• Watermark: only rows newer than the last _ingested_at are processed, so run time stays flat as months accumulate.</text>
+<text x="70" y="884" font-size="12.5" font-weight="400" fill="#374151" text-anchor="start">• Scoped delete: rows removed from a re-sent month are deleted in silver, limited to the months in the batch.</text>
+<text x="70" y="906" font-size="12.5" font-weight="400" fill="#374151" text-anchor="start">• The Telegram bot token is stored as &lt;TOKEN&gt; in Git, never the real value.</text>
+</svg>
